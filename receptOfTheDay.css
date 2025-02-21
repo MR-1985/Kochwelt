@@ -1,0 +1,675 @@
+
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #80ac84 #d4dfe3;
+  }
+
+  *::-webkit-scrollbar {
+      width: 20px;
+  }
+
+  *::-webkit-scrollbar-track {
+      background: #d4dfe3;
+  }
+
+  
+
+html {
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.headerContainer {
+  position: relative;
+  overflow-x: hidden;
+  top: 0;
+  width: 100%;
+  border-bottom: solid 0px black;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.headerLimitContainer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLogoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30px;
+  padding-left: 20px;
+}
+
+#logoKochwelt {
+  height: 50px;
+  /* padding-left: 20px; */
+  cursor: pointer;
+  transition: 75ms;
+}
+
+.headerLinksMainContainer {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.headerLinksContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+
+.headerLinksContainer a {
+  color: rgb(64, 59, 59);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.headerLinksContainer a:hover {
+  border-bottom: solid 2px;
+  border-color: #008001;
+}
+
+.headerLinksContainer a:hover {
+  color: #008001;
+}
+
+
+
+#menuToggleButton {
+  font-weight: 900;
+  padding: 0 10px;
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  transition: 75ms;
+}
+
+.sideMenuShow {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  width: 138px;
+  border-radius: 10px;
+  line-height: 20px;
+  height: auto;
+  padding: 10px 0;
+  background-color: rgb(239, 239, 239);
+  transition: all 0.5s;
+}
+
+.sideMenuHide {
+  transition: all 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  
+}
+
+.sideMenuShow a {
+  text-decoration: none;
+  color: black;
+}
+
+.sideMenuShow a:hover {
+  color: #008001;
+  border-bottom: solid 2px;
+  border-color: #008001;
+}
+
+.sideMenuShow ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sideMenuShow li a:hover {
+  border-bottom: solid 2px;
+  border-color: #008001;
+}
+
+
+
+@media (max-width: 420px) {
+  #iconsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerLinksContainer a {
+    display: none;
+  }
+
+  #menuToggleButton {
+    display: block;
+  }
+
+  .labelMainContainer {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .labelContainer {
+    flex-direction: column;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #input {
+    display: none;
+  }
+
+  #buttonPortion2 {
+    display: none;
+  }
+
+  .portionSelectWidth {
+    width: 96px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .headerLinksContainer a {
+    display: none;
+  }
+
+  #menuToggleButton {
+    display: block;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #accessoriesContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #input {
+    display: none;
+  }
+
+  #buttonPortion2 {
+    display: none;
+  }
+
+}
+
+@media (min-width: 769px) {
+  #sideMenu {
+    display: none;
+  }
+
+  #menuToggleButton {
+    display: none;
+  }
+
+  #portionSelect {
+    display: none;
+  }
+
+  #buttonPortion {
+    display: none;
+  }
+
+}
+
+#buttons {
+  border: none;
+  background-color: #008001;
+  color: white;
+  font-size: 12px;
+  padding: 5px 30px;
+  cursor: pointer;
+  transition: 75ms;
+}
+
+
+.receptContainer {
+  width: 100%;
+  display: flex;
+  margin-top: 100px;
+
+}
+
+.receptLimitContainer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 0px 20px;
+}
+
+/* ------------relevant für JS-------------- */
+.grey {
+  display: flex;
+  align-items: center;
+  background-color: rgb(228, 230, 231);
+  border-radius: 10px;
+  height: 60px;
+  padding-left: 30px;
+  gap: 30px;
+}
+
+.white {
+
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  height: 60px;
+  padding-left: 30px;
+  gap: 30px;
+}
+
+.ingredientsContainer{
+  padding-bottom: 10px;
+  display: flex;
+  }
+
+#howMuchGreyOne {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchGreyTwo {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchGreyThree {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchGreyFour {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchGreyFive {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+#howMuchWhiteOne {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchWhiteTwo {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchWhiteThree {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#howMuchWhiteFour {
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* ------------------------------------- */
+
+h1 {
+  padding: 0;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+#imgFood {
+  background-image: url('./assets/img/Tomate-Mozzarella.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  min-height: 100px;
+  width: 100%;
+  border-radius: 10px;
+  transition: 75ms;
+}
+
+#iconsContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  height: 15px;
+  width: auto;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background-color: rgb(228, 230, 231);
+  margin-top: 20px;
+}
+
+.icons img {
+  height: 12px;
+  width: auto;
+}
+
+#borderLine {
+  height: 2px;
+  width: 100%;
+  background-color: rgb(228, 230, 231);
+  margin-bottom: 20px;
+}
+
+/* .labelMainContainer {
+  /* display: flex; */
+  /* justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; */
+/* } */
+
+.labelContainer {
+  display: flex;
+  /* justify-content: flex-start;
+  align-items: center; */
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+/* -----------INPUT für JS--------------- */
+
+#input {
+  width: 60px;
+  margin: 0;
+  border: solid 1px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-color: rgb(228, 230, 231);
+  padding: 5px 30px 5px 30px;
+  font-size: 12px;
+}
+
+#portionSelect {
+  width: 97px;
+  margin: 0;
+  border: solid 1px;
+  border-color: rgb(228, 230, 231);
+  padding: 5px 30px 4px 30px;
+  font-size: 12px;
+  transition: 75ms;
+}
+
+/* --------------------Buttons------------ */
+
+#buttonPortion {
+  margin: 0;
+  border-left: solid 1px;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  border-color: rgb(228, 230, 231);
+  padding: 5px 30px;
+  font-size: 12px;
+  padding-block: 6px;
+  padding-inline: 22px;
+  border: none;
+  background-color: #008001;
+  cursor: pointer;
+  color: white;
+  transition: 75ms;
+}
+
+#buttonPortion:hover {
+  background-color:rgb(97, 93, 34);
+}
+
+#buttonPortion:active {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+#buttonPortion2 {
+  margin: 0;
+  border-left: solid 1px;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  border-color: rgb(228, 230, 231);
+  padding: 5px 30px;
+  font-size: 12px;
+  padding-block: 6px;
+  padding-inline: 22px;
+  border: none;
+  background-color: #008001;
+  cursor: pointer;
+  color: white;
+  transition: 75ms;
+}
+
+#buttonPortion2:hover {
+  background-color:rgb(97, 93, 34);
+}
+
+#buttonPortion2:active {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* -----------------Der JAVATEIL-------------------------------- */
+
+
+
+/* -------------------------------------------------- */
+
+#accessoriesContainer {
+  display: flex;
+  width: 100%;
+}
+
+.accessories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  height: 15px;
+  width: auto;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background-color: rgb(228, 230, 231);
+  margin-top: 20px;
+}
+
+.accessories img {
+  height: 12px;
+  width: auto;
+}
+
+.preparation {
+  display: flex;
+
+}
+
+.creatorNameContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-block-end: 20px;
+}
+
+.creatorNameContainer img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.creatorNameContainer p {
+  font-size: 22px;
+}
+
+footer {
+  display: flex;
+  background-color: rgb(35, 35, 35);
+  height: 150px;
+  width: 100%;
+
+}
+
+.footerLimitContainer {
+  display: flex;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerLogoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.footerLogo {
+  height: 50px;
+  cursor: pointer;
+  filter: invert();
+  transition: 75ms;
+}
+
+.footerLogoSmall {
+  display: none;
+}
+
+.footerImgContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.footerImg {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  transition: 75ms;
+}
+
+.footerImg:hover {
+  box-shadow: 0px 0px 25px 0px rgb(255, 255, 255);
+}
+
+@media(max-width:700px) {
+
+  #contactFormContainer {
+    margin: 100px 0 116px 0;
+  }
+
+  .footerLogo {
+    display: none;
+  }
+
+  .footerLogoSmall {
+    display: flex;
+    height: 40px;
+    cursor: pointer;
+    filter: invert(100%);
+  }
+
+  .footerLogoSmall:hover {
+    filter: invert(100%) brightness(1.5);
+    box-shadow: 0px 0px 25px 0px black;
+  }
+
+  .footerImg {
+    height: 40px;
+    width: 90px;
+  }
+}
+
+@media(max-width:560px) {
+  .footerImg {
+    height: 30px;
+    width: 80px;
+  }
+}
+
+@media(max-width:500px) {
+  .footerImgContainer {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .footerImgContainerExtra {
+    display: flex;
+    justify-content: center;
+  }
+}

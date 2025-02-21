@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="marco rößler">
+    <title>Bestätigung</title>
+    <link rel="stylesheet" href="send_mail.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+
+
+</head>
+
+<body>
+    <div class="headerContainer">
+        <div class="headerLimitContainer">
+            <div class="headerLogoContainer">
+                <a href="./index.html"><img id="logoKochwelt" src="./assets/img/logo.png" alt="Logo von Kochwelt"></a>
+            </div>
+            <div class="headerLinksMainContainer">
+                <div class="headerLinksContainer">
+                    <button id="menuToggleButton" onclick="toggleMenu()">...</button>
+                    <a href="./index.html">Start</a>
+                    <a href="">Rezept des Tages</a>
+                    <a href="./contact.html">Kontakt</a>
+                    <a href="./impressum.html">Impressum</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav id="sideMenu" class="sideMenuShow sideMenuHide">
+        <ul>
+            <li><a href="./index.html">Start</a></li>
+            <li><a href="#">Rezept des Tages</a></li>
+            <li><a href="./contact.html">Kontakt</a></li>
+            <li><a href="./impressum.html">Impressum</a></li>
+        </ul>
+    </nav>
+    <div class="pageContainer">
+        <div id="textBox">
+            <p id="text">Ihre Nachricht wurde erfolgreich übermittelt!</p>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="footerLimitContainer">
+        <div class="footerLogoContainer">
+            <a href="./index.html"><img class="footerLogo" src="./assets/img/logo.png" alt="Kochweltlogo"></a>
+            <a href="./index.html"><img class="footerLogoSmall" src="./assets/img/logo_small.png" alt=""></a>
+        </div>
+        <div class="footerImgContainer">
+            <div class="footerImgContainerExtra">
+                <a href="https://facebook.com" target="_blank"><img class="footerImg" src="./assets/img/facebook.jpg"
+                        alt="Facebooklogo"></a>
+            </div>
+            <div class="footerImgContainerExtra">
+                <a href="https://instagram.com" target="_blank"><img class="footerImg" src="./assets/img/instagram.jpg"
+                        alt="Instagramlogo"></a>
+            </div>
+            <div class="footerImgContainerExtra">
+                <a href="https://twitter.com" target="_blank"><img class="footerImg" src="./assets/img/twitter.jpg"
+                        alt="Twitterlogo"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
+<script src="./menu.js"></script>
