@@ -15,10 +15,15 @@ function toggleMenu() {
             }
             if (portion>21) {
               alert('Es sind nur max 21 Portionen zu errechnen!')
-              portion = "1";
+              portion = 1;
+              document.getElementById('input').value = portion;
+              for (let i = 0; i < howManyDiv.length; i++) {
+                document.getElementById(howManyDiv[i]).innerText = howManyNeed[i]; 
+              }
+              return;
             }else if (portion<1) {
               alert('Es muss mindestens 1 Portion sein')
-              portion = "1";
+              portion = 1;
               document.getElementById('input').value = portion;
                 for (let i = 0; i < howManyDiv.length; i++) {
                   document.getElementById(howManyDiv[i]).innerText = howManyNeed[i]; 
