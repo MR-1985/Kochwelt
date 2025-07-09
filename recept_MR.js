@@ -2,9 +2,9 @@ function toggleMenu() {
     document.getElementById("sideMenu").classList.toggle('sideMenuHide')
   }
   
-  howManyNeed = [150, 0.5, 0.5, 10, 1, 1, 1, 1, 0.5];
+const howManyNeed = [150, 0.5, 0.5, 10, 1, 1, 1, 1, 0.5];
   
-  howManyDiv = ["howMuchGreyOne", "howMuchWhiteOne", "howMuchGreyTwo", "howMuchWhiteTwo", "howMuchGreyThree", "howMuchWhiteThree", "howMuchGreyFour", "howMuchWhiteFour", "howMuchGreyFive"];
+const howManyDiv = ["howMuchGreyOne", "howMuchWhiteOne", "howMuchGreyTwo", "howMuchWhiteTwo", "howMuchGreyThree", "howMuchWhiteThree", "howMuchGreyFour", "howMuchWhiteFour", "howMuchGreyFive"];
   
   function calculatePortion() {
     let portion = document.getElementById("input").value;
