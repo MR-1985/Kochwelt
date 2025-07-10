@@ -91,3 +91,51 @@ function renderPreparationContainerTemplate() {
                         </ol>`
 }
 
+function renderPageContainerTemplate(){
+    return`
+    <div class="receptContainer">
+            <div class="receptLimitContainer">
+                <h1>Hähnchen-Gemüse-Pfanne mit Kräutern der Provence</h1>
+                <div id="imgFood"></div>
+                <div id="iconsContainer">
+                    <div class="icons"><img src="./assets/icons/clock-regular.svg" alt="Uhrensymbol">
+                        <p>&nbsp;&nbsp;10 Min.</p>
+                    </div>
+                    <div class="icons"><img src="./assets/icons/brain-solid.svg" alt="Gehirnsymbol">
+                        <p>&nbsp;&nbsp;simpel</p>
+                    </div>
+                    <div class="icons"><img src="./assets/icons/calendar-alt-regular.svg" alt="Kalendersymbol">
+                        <p>&nbsp;&nbsp;29.11.2024</p>
+                    </div>
+                </div>
+                <div id="borderLine">
+                </div>
+                <div class="labelMainContainer">
+                    <div class="labelContainer" id="labelContainer">
+
+                        <div id="selectOptions" class="ingredientsContainer">
+                        </div>
+
+                        <div id="ingredientsContainer">
+                        </div>
+
+                    </div>
+
+                    <h2>Zubereitung</h2>
+
+                    <div id="accessoriesContainer">
+                    </div>
+
+                    <div id="preparationContainer" class="preparation">
+                    </div>
+
+                    <h3>Rezept erstellt von</h3>
+                    <div class="creatorNameContainer">
+                        <img src="./assets/img/ich.jpg" alt="Bild vom Ersteller">
+                        <p>Marco</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+}
