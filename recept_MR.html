@@ -8,11 +8,12 @@
     <title>Hähnchen-Gemüse-Pfanne</title>
     <link rel="stylesheet" href="recept_MR.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <script src="./template_recept_MR.js"></script>
 
 
 </head>
 
-<body>
+<body onload="init()">
     <div class="headerContainer">
         <div class="headerLimitContainer">
             <div class="headerLogoContainer">
@@ -59,169 +60,30 @@
                 <div id="borderLine">
                 </div>
                 <div class="labelMainContainer">
-                    <div class="labelContainer">
-                        <div class="ingredientsContainer">
-                            <label for="input">Zutaten für &nbsp;</label>
-                            <input type="number" id="input" max="21" min="1" value="1" required>
+                    <div class="labelContainer" id="labelContainer">
 
-                            <button id="buttonPortion2" onclick="calculatePortion()">Portionen</button>
-                            <button id="buttonPortion" onclick="calculatePortionTwo()">Portionen</button>
-
-                            <select id="portionSelect" class="portionSelectWidth" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                            </select>
-
-
+                        <div id="selectOptions" class="ingredientsContainer">
                         </div>
 
-                        <div class="grey">
-
-                            <div id="howMuchGreyOne">
-                                150
-                            </div>
-
-                            <div class="what"> g
-                                Hähnchenbrustfilet
-                            </div>
-
+                        <div id="ingredientsContainer">
                         </div>
 
-                        <div class="white">
-                            <div id="howMuchWhiteOne">
-                                0.5
-                            </div>
-                            <div class="what">
-                                Paprika (rot oder gelb)
-                            </div>
-                        </div>
-
-                        <div class="grey">
-                            <div id="howMuchGreyTwo">
-                                0.5
-                            </div>
-                            <div class="what">
-                                Zucchini
-                            </div>
-                        </div>
-
-                        <div class="white">
-                            <div id="howMuchWhiteTwo">
-                                10
-                            </div>
-                            <div class="what">
-                                g Erbsen
-                            </div>
-                        </div>
-
-                        <div class="grey">
-                            <div id="howMuchGreyThree">
-                                1
-                            </div>
-                            <div class="what">
-                                große Tomate(n)
-                            </div>
-                        </div>
-
-                        <div class="white">
-                            <div id="howMuchWhiteThree">
-                                1
-                            </div>
-                            <div class="what">
-                                Mohrrübe(n)
-                            </div>
-                        </div>
-
-                        <div class="grey">
-                            <div id="howMuchGreyFour">
-                                1
-                            </div>
-                            <div class="what">
-                                kleine Zwiebel(n)
-                            </div>
-                        </div>
-
-                        <div class="white">
-                            <div id="howMuchWhiteFour">
-                                1
-                            </div>
-                            <div class="what">
-                                EL Olivenöl
-                            </div>
-                        </div>
-
-                        <div class="grey">
-                            <div id="howMuchGreyFive">
-                                0.5
-                            </div>
-                            <div class="what">
-                                TL Kräuter der Provence (oder nach Geschmack)
-                            </div>
-                        </div>
                     </div>
 
+                    <h2>Zubereitung</h2>
 
-
-                </div>
-
-                <h2>Zubereitung</h2>
-
-                <div id="accessoriesContainer">
-                    <div class="accessories">
-                        <img src="./assets/icons/clock-regular.svg" alt="Uhrensymbol">
-                        <p>&nbsp;&nbsp;ca. 10 Minuten</p>
+                    <div id="accessoriesContainer">
                     </div>
-                    <div class="accessories">
-                        <img src="./assets/icons/clock-regular.svg" alt="Uhrensymbol">
-                        <p>&nbsp;&nbsp;Gesamtzeitzeit ca. 20 Minuten</p>
+
+                    <div id="preparationContainer" class="preparation">
+                    </div>
+
+                    <h3>Rezept erstellt von</h3>
+                    <div class="creatorNameContainer">
+                        <img src="./assets/img/ich.jpg" alt="Bild vom Ersteller">
+                        <p>Marco</p>
                     </div>
                 </div>
-
-                <div class="preparation">
-                    <ol>
-                        <li>Hähnchenbrust in kleine Stücke schneiden.</li><br>
-                        <li>Paprika, Zucchini, Mohrrübe und Tomaten ebenfalls in kleine Stücke schneiden.</li><br>
-                        <li>Zwiebel schälen und in feine Würfel schneiden.</li><br>
-                        <li>In einer Pfanne das Olivenöl erhitzen und die Zwiebel darin anbraten, bis sie glasig wird.
-                        </li>
-                        <br>
-                        <li>Die Hähnchenbruststücke hinzufügen und rundherum anbraten, bis sie goldbraun sind.</li><br>
-                        <li>Die vorbereiteten Gemüse (Paprika, Zucchini, Mohrrübe, Erbsen, Tomaten) in die Pfanne geben
-                            und
-                            alles gut
-                            vermischen.</li><br>
-                        <li>Mit den Kräutern der Provence würzen und bei mittlerer Hitze etwa 5-7 Minuten weiterbraten,
-                            bis
-                            das Gemüse weich ist.</li><br>
-                        <li>Nach Belieben mit Salz und Pfeffer abschmecken.</li>
-                    </ol>
-                </div>
-
-                <h3>Rezept erstellt von</h3>
-                <div class="creatorNameContainer">
-                    <img src="./assets/img/ich.jpg" alt="Bild vom Ersteller">
-                    <p>Marco</p>
-                </div>
-
             </div>
         </div>
     </div>
