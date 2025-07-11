@@ -17,7 +17,9 @@ function renderPageContainer() {
 
 function renderPageContent() {
   clearIngredientsContainer();
-  renderSelectOptions();
+  renderInputAndButtons()
+  renderOptions()
+  // renderSelectOptions();
   renderAccessoriesContainer();
   renderPreparationContainer();
   preparationForRenderStandard();
@@ -27,9 +29,17 @@ function clearIngredientsContainer() {
   document.getElementById("ingredientsContainer").innerHTML = '';
 }
 
-function renderSelectOptions() {
-  document.getElementById("selectOptions").innerHTML = renderSelectOptionsTemplate();
+function renderInputAndButtons() {
+  document.getElementById("selectOptions").innerHTML = renderInputAndButtonsTemplate();
 }
+
+function renderOptions(){
+  let options = ""
+  for (let i =1; i < 22; i++) {
+    options += `<option value="${i}">${i}</option>`;
+  }
+    document.getElementById("selectOptions").innerHTML += renderOptionsTemplate(options);
+  }
 
 function renderAccessoriesContainer() {
   document.getElementById("accessoriesContainer").innerHTML = renderAccessoriesContainerTemplate();
