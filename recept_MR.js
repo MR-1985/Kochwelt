@@ -40,31 +40,39 @@ function renderPreparationContainer() {
 }
 function preparationForRenderStandard() {
   for (let i = 0; i < howManyNeed.length; i++) {
-    let cssClass = (i % 2 !== 0) ? 'white' : 'grey';
-    let countRef = `count-${i}`;
-    let counter = howManyNeed[i];
-    let ingredientName = ingredients[i];
-    renderStandard(cssClass, countRef, counter, ingredientName);
+    const objectsForRenderStandard = {
+      cssClass: (i % 2 !== 0) ? 'white' : 'grey',
+      countRef: `count-${i}`,
+      counter: howManyNeed[i],
+      ingredientName: ingredients[i]
+    };
+    renderStandard(objectsForRenderStandard);
   }
+};
+
+function renderStandard(objectsForRenderStandard) {
+  document.getElementById("ingredientsContainer").innerHTML += renderStandardTemplate(objectsForRenderStandard.cssClass, objectsForRenderStandard.countRef, objectsForRenderStandard.counter, objectsForRenderStandard.ingredientName);
 }
 
-function renderStandard(cssClass, countRef, counter, ingredientName) {
-  document.getElementById("ingredientsContainer").innerHTML += renderStandardTemplate(cssClass, countRef, counter, ingredientName);
-}
-
-function calculatePortion() {
+function preparationForCalculatePortion() {
   let portion = parseFloat(document.getElementById("input").value);
   if (!checkInputValue(portion)) {
     return;
   }
   document.getElementById("ingredientsContainer").innerHTML = '';
   for (let i = 0; i < howManyNeed.length; i++) {
-    let calculatedPortion = portion * howManyNeed[i];
-    let cssClass = (i % 2 !== 0) ? 'white' : 'grey';
-    let ingredientName = ingredients[i];
-    let countRef = `count-${i}`;
-    document.getElementById("ingredientsContainer").innerHTML += ingredientsTemplate(cssClass, countRef, calculatedPortion, ingredientName);
+    const objectsForCalcutatePortion = {
+      calculatedPortion: portion * howManyNeed[i],
+      cssClass: (i % 2 !== 0) ? 'white' : 'grey',
+      ingredientName: ingredients[i],
+      countRef: `count-${i}`
+    }
+    renderCalculatetPortion(objectsForCalcutatePortion)
   }
+}
+
+function renderCalculatetPortion(objectsForCalcutatePortion) {
+  document.getElementById("ingredientsContainer").innerHTML += calculatedPortionTemplate(objectsForCalcutatePortion.cssClass, objectsForCalcutatePortion.countRef, objectsForCalcutatePortion.calculatedPortion, objectsForCalcutatePortion.ingredientName);
 }
 
 function checkInputValue(portion) {
@@ -81,14 +89,19 @@ function checkInputValue(portion) {
   }
   return true
 }
-function calculatePortionTwo() {
+function preparationForCalculatePortionTwo() {
   let portionTwo = parseFloat(document.getElementById('portionSelect').value);
   document.getElementById("ingredientsContainer").innerHTML = '';
   for (let i = 0; i < howManyNeed.length; i++) {
-    let calculatedPortionTwo = portionTwo * howManyNeed[i];
-    let cssClass = (i % 2 !== 0) ? 'white' : 'grey';
-    let ingredientName = ingredients[i];
-    let countRef = `count-${i}`;
-    document.getElementById("ingredientsContainer").innerHTML += ingredientsTemplate(cssClass, countRef, calculatedPortionTwo, ingredientName);
+    const objectsForCalcutatePortionTwo = {
+      calculatedPortionTwo: portionTwo * howManyNeed[i],
+      cssClass: (i % 2 !== 0) ? 'white' : 'grey',
+      ingredientName: ingredients[i],
+      countRef: `count-${i}`
+    }
+    renderCalculatetPortionTwo(objectsForCalcutatePortionTwo);
   }
+}
+function renderCalculatetPortionTwo(objectsForCalcutatePortionTwo) {
+  document.getElementById("ingredientsContainer").innerHTML += calculatetPortionTwoTemplate(objectsForCalcutatePortionTwo.cssClass, objectsForCalcutatePortionTwo.countRef, objectsForCalcutatePortionTwo.calculatedPortionTwo, objectsForCalcutatePortionTwo.ingredientName);
 }

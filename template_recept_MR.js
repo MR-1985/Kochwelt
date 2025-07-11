@@ -51,8 +51,8 @@ function renderSelectOptionsTemplate() {
     return `
     <label for="input">Zutaten für &nbsp;</label>
                             <input type="number" id="input" max="21" min="1" value="1" required>
-                            <button id="buttonPortion2" onclick="calculatePortion()">Portionen</button>
-                            <button id="buttonPortion" onclick="calculatePortionTwo()">Portionen</button>
+                            <button id="buttonPortion2" onclick="preparationForCalculatePortion()">Portionen</button>
+                            <button id="buttonPortion" onclick="preparationForCalculatePortionTwo()">Portionen</button>
                             <select id="portionSelect" class="portionSelectWidth" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -128,7 +128,7 @@ function renderStandardTemplate(cssClass, countRef, counter, ingredientName) {
     </div>`
 }
 
-function ingredientsTemplate(cssClass, countRef, calculatedPortion, ingredientName) {
+function calculatedPortionTemplate(cssClass, countRef, calculatedPortion, ingredientName) {
     return `
     <div class="${cssClass}">
         <div id="${countRef}">
@@ -139,3 +139,14 @@ function ingredientsTemplate(cssClass, countRef, calculatedPortion, ingredientNa
         </div>
     </div>`
 }
+
+function calculatetPortionTwoTemplate(cssClass, countRef, calculatedPortionTwo, ingredientName) {
+    return `
+    <div class="${cssClass}">
+        <div id="${countRef}">
+            ${calculatedPortionTwo}
+        </div>
+        <div class="what">
+            ${ingredientName}
+        </div>`
+    }
