@@ -1,34 +1,56 @@
-function toggleMenu() {
-  document.getElementById("sideMenu").classList.toggle('sideMenuHide')
-}
 
 const howManyNeed = [150, 0.5, 0.5, 10, 1, 1, 1, 1, 0.5];
 const ingredients = ["Hähnchenbrustfilet", "Paprika (rot oder gelb)", "Zucchini", "g Erbsen", "große Tomate(n)", "Mohrrübe(n)", "kleine Zwiebel(n)", "EL Olivenöl", "TL Kräuter der Provence (oder nach Geschmack)"];
 
-function init() {
-    renderPageContainer();
-  };
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle('sideMenuHide')
+}
 
+function init() {
+  renderPageContainer();
+  renderPageContent();
+};
 
 function renderPageContainer() {
   document.getElementById("pageContainer").innerHTML = renderPageContainerTemplate();
-  renderPageContent();
 }
 
 function renderPageContent() {
-  document.getElementById("selectOptions").innerHTML = renderSelectOptions();
-  document.getElementById("accessoriesContainer").innerHTML = renderAccessoriesContainerTemplate();
-  document.getElementById("preparationContainer").innerHTML = renderPreparationContainerTemplate();
+  clearIngredientsContainer();
+  renderSelectOptions();
+  renderAccessoriesContainer();
+  renderPreparationContainer();
+  preparationForRenderStandard();
+}
+
+function clearIngredientsContainer() {
   document.getElementById("ingredientsContainer").innerHTML = '';
+}
+
+function renderSelectOptions() {
+  document.getElementById("selectOptions").innerHTML = renderSelectOptionsTemplate();
+}
+
+function renderAccessoriesContainer() {
+  document.getElementById("accessoriesContainer").innerHTML = renderAccessoriesContainerTemplate();
+}
+
+function renderPreparationContainer() {
+  document.getElementById("preparationContainer").innerHTML = renderPreparationContainerTemplate();
+}
+function preparationForRenderStandard() {
   for (let i = 0; i < howManyNeed.length; i++) {
     let cssClass = (i % 2 !== 0) ? 'white' : 'grey';
     let countRef = `count-${i}`;
     let counter = howManyNeed[i];
     let ingredientName = ingredients[i];
-  document.getElementById("ingredientsContainer").innerHTML += renderStandardTemplate(cssClass, countRef, counter, ingredientName);
-}
+    renderStandard(cssClass, countRef, counter, ingredientName);
+  }
 }
 
+function renderStandard(cssClass, countRef, counter, ingredientName) {
+  document.getElementById("ingredientsContainer").innerHTML += renderStandardTemplate(cssClass, countRef, counter, ingredientName);
+}
 
 function calculatePortion() {
   let portion = parseFloat(document.getElementById("input").value);
@@ -44,6 +66,7 @@ function calculatePortion() {
     document.getElementById("ingredientsContainer").innerHTML += ingredientsTemplate(cssClass, countRef, calculatedPortion, ingredientName);
   }
 }
+
 function checkInputValue(portion) {
   if (portion > 21) {
     alert('Es sind nur max 21 Portionen zu errechnen!')
