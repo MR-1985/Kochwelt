@@ -58,11 +58,14 @@ function checkInputValue(portion) {
   }
   return true
 }
-
-// function calculatePortionTwo() {
-//   let portionTwo = document.getElementById('portionSelect').value;
-//   for (let i = 0; i < howManyNeed.length; i++) {
-//     let calculatedPortionTwo = portionTwo * howManyNeed[i];
-//     document.getElementById(howManyDiv[i]).innerText = calculatedPortionTwo;
-//   }
-// }
+function calculatePortionTwo() {
+  let portionTwo = parseFloat(document.getElementById('portionSelect').value);
+  document.getElementById("ingredientsContainer").innerHTML = '';
+  for (let i = 0; i < howManyNeed.length; i++) {
+    let calculatedPortionTwo = portionTwo * howManyNeed[i];
+    let cssClass = (i % 2 !== 0) ? 'white' : 'grey';
+    let ingredientName = ingredients[i];
+    let countRef = `count-${i}`;
+    document.getElementById("ingredientsContainer").innerHTML += ingredientsTemplate(cssClass, countRef, calculatedPortionTwo, ingredientName);
+  }
+}
